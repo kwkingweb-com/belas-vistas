@@ -1,0 +1,23 @@
+'use strict';
+const $=s=>document.querySelector(s);const $$=s=>Array.from(document.querySelectorAll(s));
+const data=window.CHALE_DETAIL||{name:'Chalés Bela Vista'};
+$('#year').textContent=new Date().getFullYear();
+const menuBtn=$('#detailMenuButton');const mobileNav=$('#detailMobileNav');
+function closeMobile(){mobileNav.classList.remove('open');mobileNav.inert=true;menuBtn.setAttribute('aria-expanded','false');menuBtn.setAttribute('aria-label','Abrir menu')}
+menuBtn.addEventListener('click',()=>{const isOpen=!mobileNav.classList.contains('open');mobileNav.classList.toggle('open',isOpen);mobileNav.inert=!isOpen;menuBtn.setAttribute('aria-expanded',String(isOpen));menuBtn.setAttribute('aria-label',isOpen?'Fechar menu':'Abrir menu')});
+$$('.detail-mobile-nav a').forEach(a=>a.addEventListener('click',closeMobile));
+const dateToday=()=>{const d=new Date();return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
+const validDate=s=>/^\d{4}-\d{2}-\d{2}$/.test(s)&&!Number.isNaN(new Date(s+'T12:00:00').valueOf())&&new Date(s+'T12:00:00').toISOString().slice(0,10)===s;
+const after=s=>{const d=new Date(s+'T12:00:00');d.setDate(d.getDate()+1);return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-')};
+const pt=s=>s.split('-').reverse().join('/');
+const dt=$('#detailCheckin'),out=$('#detailCheckout');dt.min=dateToday();out.min=after(dateToday());
+dt.addEventListener('change',()=>{out.min=validDate(dt.value)?after(dt.value):after(dateToday());if(out.value&&out.value<out.min)out.value=''});
+$('#detailBookingForm').addEventListener('submit',e=>{e.preventDefault();const error=$('#detailFormError');error.textContent='';const name=$('#detailName').value.trim().replace(/\s+/g,' '),phone=$('#detailPhone').value.trim(),digits=phone.replace(/\D/g,''),entry=dt.value,exit=out.value,adults=$('#detailAdults').value,kids=$('#detailKids').value,notes=$('#detailNotes').value.trim();function fail(msg,el){error.textContent=msg;el.focus()}if(name.length<3||!name.includes(' '))return fail('Digite seu nome e sobrenome.',$('#detailName'));if(digits.length<10||digits.length>13)return fail('Informe um WhatsApp com DDD válido.',$('#detailPhone'));if(!validDate(entry)||entry<dateToday())return fail('Selecione uma data de entrada válida.',dt);if(!validDate(exit)||exit<=entry)return fail('A saída deve ser posterior à entrada.',out);const message=['Olá! Gostaria de solicitar uma reserva nos *Chalés Bela Vista*.','','*ACOMODAÇÃO DE INTERESSE*','🏡 *'+data.name+'*','','👤 *Nome:* '+name,'📱 *WhatsApp:* '+phone,'📅 *Entrada:* '+pt(entry),'📅 *Saída:* '+pt(exit),'👥 *Adultos:* '+adults,'🧒 *Crianças:* '+kids,notes?'📝 *Observações:* '+notes:'','','Esta solicitação depende de confirmação de tarifas, condições e disponibilidade pela pousada.'].filter(Boolean).join('\n');const url='https://wa.me/5535999541898?text='+encodeURIComponent(message);const popup=window.open(url,'_blank','noopener,noreferrer');if(!popup)window.location.href=url});
+const photos=$$('.detail-gallery-item').map(b=>({src:b.querySelector('img').src,alt:b.querySelector('img').alt}));let current=0;const dlg=$('#detailPhotoDialog'),photo=$('#detailPhotoImg');let activeTrigger=null;
+function showPhoto(i){current=(i+photos.length)%photos.length;photo.src=photos[current].src;photo.alt=photos[current].alt;$('#detailPhotoCaption').textContent=photos[current].alt;$('#detailPhotoCounter').textContent=(current+1)+' / '+photos.length}
+function openGallery(i){activeTrigger=document.activeElement;showPhoto(i);dlg.showModal();document.body.style.overflow='hidden'}
+$$('.detail-gallery-item').forEach((b,i)=>b.addEventListener('click',()=>openGallery(i)));
+$('#galleryAll').addEventListener('click',()=>openGallery(0));
+$('#detailPhotoClose').addEventListener('click',()=>dlg.close());$('#detailPhotoPrev').addEventListener('click',()=>showPhoto(current-1));$('#detailPhotoNext').addEventListener('click',()=>showPhoto(current+1));dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});dlg.addEventListener('close',()=>{document.body.style.overflow='';if(activeTrigger?.isConnected)activeTrigger.focus()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMobile();if(dlg.open&&e.key==='ArrowLeft')showPhoto(current-1);if(dlg.open&&e.key==='ArrowRight')showPhoto(current+1)});
+let busy=false;function scrollProgress(){const max=Math.max(1,document.documentElement.scrollHeight-innerHeight);$('#scrollLine').style.width=(scrollY/max*100)+'%';busy=false}window.addEventListener('scroll',()=>{if(!busy){busy=true;requestAnimationFrame(scrollProgress)}},{passive:true});scrollProgress();

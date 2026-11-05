@@ -1,0 +1,152 @@
+[
+  {
+    "id": "vista-montanhas",
+    "name": "Duplo com Vista das Montanhas",
+    "short": "Vista das Montanhas",
+    "label": "Para dois · Vista da serra",
+    "tag": "VISTA PARA MONTANHAS",
+    "capacity": 2,
+    "bed": "Quarto duplo",
+    "size": "1 quarto",
+    "bath": "1 banheiro",
+    "hero": "https://q-xx.bstatic.com/xdata/images/hotel/max500/851794615.jpg?a=2195102&k=10a4bf152054a40a866971dce8de5c5b019474092c600f6a05873f33f84924fd&o=",
+    "chips": [
+      "Até 2 hóspedes",
+      "Varanda",
+      "Vista das montanhas",
+      "TV de tela plana"
+    ],
+    "desc": "Acordar com as montanhas por perto é um dos grandes encantos dessa opção. Uma acomodação para quem procura uma viagem a dois, cercada pela paisagem de Bueno Brandão.",
+    "detail": "O anúncio público desta categoria descreve quarto duplo com vista da montanha, varanda, televisão de tela plana, mesa de trabalho e banheiro. A posição da unidade e o tipo de cama devem ser confirmados com a pousada.",
+    "subtitle": "Para viver a paisagem sem pressa",
+    "image_note": "Imagem da categoria publicada em plataforma de hospedagem.",
+    "features": [
+      "Vista para as montanhas",
+      "Varanda",
+      "Banheiro privativo",
+      "TV de tela plana",
+      "Mesa de trabalho"
+    ],
+    "flag": ""
+  },
+  {
+    "id": "duplo-terraco",
+    "name": "Duplo com Terraço",
+    "short": "Duplo com Terraço",
+    "label": "Até três · Terraço",
+    "tag": "TERRAÇO & HORIZONTE",
+    "capacity": 2,
+    "bed": "Quarto duplo",
+    "size": "1 quarto",
+    "bath": "1 banheiro",
+    "hero": "https://q-xx.bstatic.com/xdata/images/hotel/max500/851807510.jpg?a=2195102&k=fbe86cd3c4d3ab009f9b7f5682cca22768864e222f5962db4ba6b3d4bfc9cd00&o=",
+    "chips": [
+      "Até 2 adultos*",
+      "Terraço",
+      "Vista das montanhas",
+      "1 banheiro"
+    ],
+    "desc": "Um convite para alternar passeios pela região com intervalos de descanso ao ar livre. O terraço aparece como diferencial desta categoria.",
+    "detail": "Listada como quarto duplo com terraço e vista para as montanhas. A capacidade indicada é de até três hóspedes. A disposição das camas e as condições para crianças devem ser confirmadas antes de reservar.",
+    "subtitle": "Espaço para aproveitar do lado de fora",
+    "image_note": "Fotografia vinculada à categoria em anúncio público.",
+    "features": [
+      "Terraço",
+      "Varanda",
+      "Vista para as montanhas",
+      "Banheiro privativo",
+      "Mesa de trabalho"
+    ],
+    "flag": ""
+  },
+  {
+    "id": "duplo-deluxe",
+    "name": "Duplo Deluxe",
+    "short": "Duplo Deluxe",
+    "label": "Até três · Aconchego",
+    "tag": "CONFORTO EM DETALHES",
+    "capacity": 2,
+    "bed": "Quarto duplo",
+    "size": "1 quarto",
+    "bath": "1 banheiro",
+    "hero": "https://q-xx.bstatic.com/xdata/images/hotel/max500/851807610.jpg?a=2195102&k=20b55bcd9e8e69e48c03dd38974b21ca3a813355955c1324dc91309a10cb7618&o=",
+    "chips": [
+      "Até 2 adultos*",
+      "Banheiro privativo",
+      "Terraço",
+      "TV de tela plana"
+    ],
+    "desc": "Uma opção para quem valoriza o conforto, a praticidade e uma base acolhedora para explorar as montanhas de Bueno Brandão.",
+    "detail": "O anúncio descreve a opção Deluxe com banheiro privativo, televisão de tela plana, terraço e vista da montanha. Itens e configuração podem variar conforme a unidade efetivamente disponível.",
+    "subtitle": "Descanso com a atmosfera do interior",
+    "image_note": "Fotografia vinculada à categoria em anúncio público.",
+    "features": [
+      "Banheiro privativo",
+      "Terraço",
+      "Vista para as montanhas",
+      "TV de tela plana",
+      "1 quarto"
+    ],
+    "flag": ""
+  },
+  {
+    "id": "duplo-varanda",
+    "name": "Duplo com Varanda",
+    "short": "Duplo com Varanda",
+    "label": "Para dois · Varanda",
+    "tag": "PAUSAS PARA CONTEMPLAR",
+    "capacity": 2,
+    "bed": "Quarto duplo",
+    "size": "1 quarto",
+    "bath": "1 banheiro",
+    "hero": "https://q-xx.bstatic.com/xdata/images/hotel/max500/851807621.jpg?a=2195102&k=3b3b178deddf009600602fa92290212019d97eac0b30cfc3f6983f890d216d10&o=",
+    "chips": [
+      "Até 2 hóspedes",
+      "Varanda",
+      "Vista das montanhas",
+      "TV de tela plana"
+    ],
+    "desc": "A varanda convida a aproveitar o ar da montanha, a luz do dia e os momentos simples que fazem uma viagem ser lembrada.",
+    "detail": "Esta categoria aparece listada com varanda, vista das montanhas, banheiro privativo e TV. Confirme se a acomodação disponível corresponde à fotografia e quais são as condições de reserva.",
+    "subtitle": "Um cantinho aberto para a natureza",
+    "image_note": "Fotografia vinculada à categoria em anúncio público.",
+    "features": [
+      "Varanda",
+      "Vista das montanhas",
+      "Banheiro privativo",
+      "TV de tela plana",
+      "1 quarto"
+    ],
+    "flag": ""
+  },
+  {
+    "id": "familia",
+    "name": "Chalés para Famílias",
+    "short": "Chalés Família",
+    "label": "Até seis · Sob consulta",
+    "tag": "FAMÍLIA & GRUPO",
+    "capacity": 6,
+    "bed": "Configuração a confirmar",
+    "size": "Unidades familiares",
+    "bath": "Consultar",
+    "hero": "https://ecrie.com.br/sistema/conteudos/imagem/m_50_1_11_27012020142422.jpg",
+    "chips": [
+      "Até 6 pessoas*",
+      "Para famílias",
+      "Configuração sob consulta",
+      "Café da manhã"
+    ],
+    "desc": "Para quem planeja reunir família e amigos na serra: há uma referência pública anterior a chalés com capacidade para até seis pessoas.",
+    "detail": "Esta possibilidade aparece em um anúncio público mais antigo. A quantidade de chalés familiares, a capacidade atual e as configurações de camas precisam ser verificadas diretamente com a propriedade.",
+    "subtitle": "Mais gente para colecionar memórias",
+    "image_note": "Foto geral de um chalé da propriedade, sem confirmação de correspondência à categoria familiar.",
+    "features": [
+      "Opção familiar citada em anúncio anterior",
+      "Capacidade divulgada: até 6*",
+      "Estacionamento na propriedade",
+      "Café da manhã da pousada",
+      "Confirmação obrigatória"
+    ],
+    "flag": "* Referência de anúncio antigo, sujeita à confirmação."
+  }
+]
